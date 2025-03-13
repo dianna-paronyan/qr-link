@@ -46,7 +46,11 @@ export class QrComponent implements OnInit{
     });
   }
 
-  updateQRCode(): void {
+    updateQRCode(): void {
+      if (!this.randomImageUrl.trim()) {
+      this.qrImageUrl = null;
+      return;
+    }
     this.inputChange$.next(this.randomImageUrl);
   }
 
