@@ -1,0 +1,113 @@
+$primary-color: #ED5A5A;
+$primary-dark: #6A0000;
+$secondary-color: #F8EBE4;
+$text-color: #26150E;
+$border-color: #63373A;
+$shadow-light: -3px -3px 10px -1px #FFFFFFF2;
+$shadow-dark: 5px 5px 15px -2px #59222240;
+$border-radius: 8px;
+$btn-height: 48px;
+$btn-padding: 12px 30px;
+$input-height: 44px;
+
+@mixin button-style($bg-color, $text-color) {
+  height: $btn-height;
+  border-radius: $border-radius;
+  background: $bg-color;
+  padding: $btn-padding;
+  box-shadow: $shadow-light, $shadow-dark;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  border: none;
+  color: $text-color;
+  cursor: pointer;
+}
+
+.qr-container {
+  width: 1120px;
+  height: 288px;
+  margin: 55px 40px;
+}
+
+.qr-card {
+  border-radius: 12px;
+  padding: 20px;
+  gap: 20px;
+  background: $secondary-color;
+  box-shadow: $shadow-light, $shadow-dark;
+}
+
+.qr-image-wrapper {
+  margin-top: 20px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  color: $text-color;
+}
+
+.link-container {
+  margin-top: 20px;
+  width: 446px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.link-input {
+  flex-grow: 1;
+  height: $input-height;
+  padding: 4px 180px 4px 48px;
+  border-radius: $border-radius;
+  background: $secondary-color;
+  border: 1px solid $border-color;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+}
+
+.link-img {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+}
+
+.copy-btn {
+  position: absolute;
+  right: 4px;
+  width: 127px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius;
+  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.action-buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.save-btn {
+  @include button-style(linear-gradient(135deg, $primary-color 0%, $primary-dark 100%), #FFFFFF);
+}
+
+.delete-btn {
+  @include button-style($secondary-color, $border-color);
+}

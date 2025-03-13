@@ -1,0 +1,30 @@
+<div class="qr-container">
+  <div class="qr-card">
+    <h2 class="title">Download QR Code</h2>
+
+    <div class="qr-image-wrapper">
+      <app-loading/>
+      <img [src]="qrImageUrl" class="qr-img"/>
+    </div>
+
+    <div class="link-container">
+      <img ngSrc="assets/link.svg" alt="link" width="24" height="24" class="link-img">
+      <input
+        type="text"
+        class="link-input"
+        [value]="qrImageUrl"
+        [(ngModel)]="randomImageUrl"
+        (input)="updateQRCode()"
+      />
+
+      <button class="btn copy-btn" (click)="copyLink()" [disabled]="!randomImageUrl">
+        <p>Copy link</p>
+      </button>
+    </div>
+
+  </div>
+  <div class="action-buttons">
+    <button class="btn save-btn" (click)="save()">Save</button>
+    <button class="btn delete-btn" (click)="deleteChanges()">Delete changes</button>
+  </div>
+</div>
